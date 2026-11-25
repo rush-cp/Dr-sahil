@@ -4,158 +4,501 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Sahil | Bakchodi Clinic</title>
+
+<title>Dr. Sahil — The Unlicensed Legend</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+:root {
+    --bg: #080b0a;
+    --card: #111715;
+    --green: #c5ff45;
+    --white: #f5f7f4;
+    --muted: #8a9690;
+    --border: #26312b;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f0fdf4;
-    color: #123;
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
 }
 
-header {
-    background: #064e3b;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 28px;
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #c5ff4510;
+    filter: blur(130px);
+    top: -200px;
+    right: -150px;
+    pointer-events: none;
 }
 
 nav {
-    margin-top: 12px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 14px;
-}
-
-.hero {
-    text-align: center;
-    padding: 45px 20px;
-}
-
-.doctor {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #10b981;
-    background: white;
-}
-
-.hero h2 {
-    margin-top: 20px;
-    font-size: 30px;
-}
-
-.hero p {
-    margin: 12px auto;
-    max-width: 500px;
-    color: #555;
-    line-height: 1.6;
-}
-
-.badge {
-    display: inline-block;
-    background: #d1fae5;
-    color: #065f46;
-    padding: 8px 15px;
-    border-radius: 30px;
-    margin-top: 12px;
-    font-weight: bold;
-}
-
-button {
-    background: #059669;
-    color: white;
-    border: none;
-    padding: 13px 22px;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 15px;
-}
-
-button:hover {
-    background: #047857;
-}
-
-section {
-    padding: 35px 20px;
-    text-align: center;
-}
-
-section h2 {
-    margin-bottom: 20px;
-    color: #064e3b;
-}
-
-.cards {
+    max-width: 1150px;
+    margin: auto;
+    padding: 25px 24px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.card {
-    background: white;
-    padding: 22px;
-    border-radius: 15px;
-    width: 250px;
-    box-shadow: 0 5px 15px #00000010;
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -1px;
 }
 
-.card h3 {
-    margin-bottom: 10px;
+.logo span {
+    color: var(--green);
 }
 
-.card p {
-    color: #666;
-    line-height: 1.5;
+.nav-links {
+    display: flex;
+    gap: 28px;
 }
 
-.clinic {
-    background: #d1fae5;
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: .3s;
 }
 
-#result {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #065f46;
+.nav-links a:hover {
+    color: var(--green);
 }
 
-footer {
-    background: #064e3b;
-    color: white;
-    text-align: center;
-    padding: 20px;
+.nav-btn {
+    color: var(--bg);
+    background: var(--green);
+    text-decoration: none;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-weight: 700;
     font-size: 13px;
 }
 
-@media(max-width:600px) {
-    header h1 {
+.hero {
+    max-width: 1150px;
+    margin: auto;
+    padding: 65px 24px 90px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 9px 14px;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    background: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--green);
+}
+
+.hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: .98;
+    letter-spacing: -5px;
+    font-weight: 700;
+}
+
+.hero h1 span {
+    color: var(--green);
+}
+
+.hero-text {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-top: 25px;
+    max-width: 420px;
+    font-size: 15px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 13px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+.primary-btn {
+    background: var(--green);
+    color: #080b0a;
+    padding: 15px 22px;
+    border-radius: 9px;
+    border: none;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 35px #c5ff4520;
+}
+
+.secondary-btn {
+    border: 1px solid var(--border);
+    color: white;
+    padding: 15px 22px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.doctor-wrap {
+    position: relative;
+    max-width: 430px;
+    margin: auto;
+    width: 100%;
+}
+
+.doctor-frame {
+    position: relative;
+    border: 1px solid #344139;
+    border-radius: 25px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #1b2720, #0b100d);
+    aspect-ratio: 4 / 5;
+}
+
+.doctor-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    opacity: .95;
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        #080b0a 0%,
+        transparent 55%
+    );
+}
+
+.doctor-info {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+}
+
+.doctor-info h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+}
+
+.doctor-info p {
+    color: var(--green);
+    font-size: 12px;
+    margin-top: 6px;
+    letter-spacing: 1px;
+}
+
+.floating-card {
+    position: absolute;
+    background: #141b17;
+    border: 1px solid #344139;
+    border-radius: 13px;
+    padding: 15px 18px;
+    box-shadow: 0 15px 40px #00000050;
+}
+
+.floating-card small {
+    color: var(--muted);
+    font-size: 10px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.floating-card strong {
+    font-size: 14px;
+}
+
+.float-top {
+    top: 35px;
+    right: -25px;
+}
+
+.float-bottom {
+    bottom: 100px;
+    left: -35px;
+}
+
+.stats {
+    max-width: 1150px;
+    margin: auto;
+    padding: 0 24px 70px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.stat {
+    padding: 25px;
+    border: 1px solid var(--border);
+    background: #0d120f;
+    border-radius: 15px;
+}
+
+.stat h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 30px;
+    color: var(--green);
+}
+
+.stat p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.section {
+    max-width: 1150px;
+    margin: auto;
+    padding: 65px 24px;
+}
+
+.section-label {
+    color: var(--green);
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.section h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(32px, 5vw, 48px);
+    letter-spacing: -2px;
+}
+
+.section-desc {
+    color: var(--muted);
+    line-height: 1.7;
+    margin-top: 13px;
+    max-width: 500px;
+    font-size: 14px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 40px;
+}
+
+.service {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    padding: 27px;
+    transition: .3s;
+}
+
+.service:hover {
+    border-color: var(--green);
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 28px;
+    margin-bottom: 22px;
+}
+
+.service h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.service p {
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 13px;
+}
+
+.diagnosis {
+    background: var(--green);
+    color: #080b0a;
+    border-radius: 22px;
+    padding: 50px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.diagnosis .section-label {
+    color: #40551c;
+}
+
+.diagnosis h2 {
+    font-size: clamp(30px, 5vw, 48px);
+}
+
+.diagnosis p {
+    margin: 15px auto 25px;
+    max-width: 500px;
+    line-height: 1.7;
+    color: #34451a;
+    font-size: 14px;
+}
+
+.diagnosis button {
+    background: #080b0a;
+    color: var(--green);
+    border: none;
+    border-radius: 9px;
+    padding: 15px 25px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#result {
+    margin-top: 25px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.contact {
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 70px 24px;
+}
+
+.contact h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(35px, 6vw, 60px);
+    letter-spacing: -3px;
+}
+
+.contact p {
+    color: var(--muted);
+    margin: 20px auto;
+    line-height: 1.7;
+    max-width: 450px;
+}
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+footer span {
+    color: var(--green);
+}
+
+@media(max-width: 800px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 55px;
+        padding-top: 45px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .doctor-wrap {
+        max-width: 350px;
+    }
+
+    .float-top {
+        right: -8px;
+    }
+
+    .float-bottom {
+        left: -8px;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        gap: 8px;
+    }
+
+    .stat {
+        padding: 16px 10px;
+    }
+
+    .stat h3 {
         font-size: 23px;
     }
 
-    .hero h2 {
-        font-size: 25px;
+    .stat p {
+        font-size: 10px;
     }
 
-    nav a {
-        margin: 0 5px;
+    .diagnosis {
+        padding: 35px 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+@media(max-width: 400px) {
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .doctor-info h2 {
+        font-size: 24px;
     }
 }
 </style>
@@ -163,126 +506,229 @@ footer {
 
 <body>
 
-<header>
-    <h1>🩺 Bakchodi Clinic</h1>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#treatment">Treatment</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+<nav>
+    <div class="logo">DR. <span>SAHIL.</span></div>
 
-<div class="hero" id="home">
-
-    <!-- Replace doctor.jpg with Dr. Sahil's photo -->
-    <img src="doctor.jpg"
-         alt="Dr. Sahil"
-         class="doctor"
-         onerror="this.src='https://placehold.co/300x300/064e3b/ffffff?text=Dr.+Sahil'">
-
-    <h2>Dr. Sahil 👨‍⚕️</h2>
-
-    <p>
-        Specialist in Love Fever, Overthinking,
-        Single Life Problems and Unlimited Bakchodi.
-    </p>
-
-    <div class="badge">
-        100% Bakchod Certified
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Treatments</a>
+        <a href="#diagnosis">Diagnosis</a>
     </div>
 
-    <br>
+    <a href="#diagnosis" class="nav-btn">Consult Now ↗</a>
+</nav>
 
-    <button onclick="diagnosis()">
-        Get Your Diagnosis 😂
-    </button>
+<!-- HERO -->
 
-    <div id="result"></div>
+<section class="hero" id="about">
+
+    <div class="hero-content">
+
+        <div class="tag">
+            <span class="dot"></span>
+            THE INTERNET'S MOST SUSPECTED DOCTOR
+        </div>
+
+        <h1>
+            Your problems.<br>
+            My <span>bakchodi.</span>
+        </h1>
+
+        <p class="hero-text">
+            Welcome to the clinic of Dr. Sahil.
+            Specializing in heartbreaks, overthinking
+            and diseases that Google can't explain.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#diagnosis" class="primary-btn">
+                Get Diagnosed ↗
+            </a>
+
+            <a href="#services" class="secondary-btn">
+                Explore Treatments
+            </a>
+        </div>
+
+    </div>
+
+    <div class="doctor-wrap">
+
+        <div class="doctor-frame">
+
+            <!-- Upload your photo as doctor.jpg -->
+
+            <img src="doctor.jpg"
+                 alt="Dr. Sahil"
+                 onerror="this.style.display='none'">
+
+            <div class="image-overlay"></div>
+
+            <div class="doctor-info">
+                <h2>Dr. Sahil</h2>
+                <p>MD IN BAKCHODI & OVERTHINKING</p>
+            </div>
+
+        </div>
+
+        <div class="floating-card float-top">
+            <small>CLINIC STATUS</small>
+            <strong>🟢 Online-ish</strong>
+        </div>
+
+        <div class="floating-card float-bottom">
+            <small>SUCCESS RATE</small>
+            <strong>Trust me bro. 100%</strong>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATS -->
+
+<div class="stats">
+
+    <div class="stat">
+        <h3>∞</h3>
+        <p>Unnecessary Thoughts</p>
+    </div>
+
+    <div class="stat">
+        <h3>0%</h3>
+        <p>Medical Credibility</p>
+    </div>
+
+    <div class="stat">
+        <h3>24/7</h3>
+        <p>Available for Bakchodi</p>
+    </div>
 
 </div>
 
-<section id="treatment" class="clinic">
-    <h2>Our Special Treatments 💊</h2>
+<!-- SERVICES -->
 
-    <div class="cards">
+<section class="section" id="services">
 
-        <div class="card">
-            <h3>💔 Heartbreak</h3>
+    <div class="section-label">WHAT WE TREAT</div>
+
+    <h2>Serious problems.<br>Unserious doctor.</h2>
+
+    <p class="section-desc">
+        We don't promise miracles.
+        We promise questionable advice and premium-level nonsense.
+    </p>
+
+    <div class="services">
+
+        <div class="service">
+            <div class="service-icon">💔</div>
+            <h3>Heartbreak Syndrome</h3>
             <p>
-                Prescription: 2 plates momos,
-                unlimited memes and no stalking.
+                Symptoms include checking their last seen,
+                listening to sad songs and saying "I'm fine."
             </p>
         </div>
 
-        <div class="card">
-            <h3>🧠 Overthinking</h3>
+        <div class="service">
+            <div class="service-icon">🧠</div>
+            <h3>Overthinking Disorder</h3>
             <p>
-                Take 8 hours of sleep.
-                Avoid unnecessary imagination.
+                Your brain has 47 tabs open
+                and none of them are responding.
             </p>
         </div>
 
-        <div class="card">
-            <h3>🌚 Love Fever</h3>
+        <div class="service">
+            <div class="service-icon">🌚</div>
+            <h3>Love Fever</h3>
             <p>
-                Symptoms: Checking last seen
-                every 2 minutes.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>🤡 Single Syndrome</h3>
-            <p>
-                No permanent cure.
-                Enjoy your freedom, patient.
+                A mysterious condition caused by
+                one person's "Hey" message.
             </p>
         </div>
 
     </div>
+
 </section>
 
-<section id="contact">
-    <h2>Book Your Appointment 📅</h2>
+<!-- DIAGNOSIS -->
+
+<section class="section" id="diagnosis">
+
+    <div class="diagnosis">
+
+        <div class="section-label">FREE ONLINE CONSULTATION</div>
+
+        <h2>What's wrong with you?</h2>
+
+        <p>
+            Let Dr. Sahil scan your personality
+            and discover your highly unnecessary diagnosis.
+        </p>
+
+        <button onclick="diagnose()">
+            Scan My Brain ↗
+        </button>
+
+        <div id="result">
+            Awaiting patient...
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact">
+
+    <div class="section-label">CONTACT THE LEGEND</div>
+
+    <h2>Need help?<br><span style="color:#c5ff45">Or just attention?</span></h2>
 
     <p>
-        Feeling mentally cooked?
-        Consult Dr. Sahil for a free dose of bakchodi.
+        Dr. Sahil is currently accepting patients,
+        admirers and people with absolutely no life.
     </p>
 
-    <button onclick="appointment()">
-        Book Appointment
-    </button>
+    <a href="#diagnosis" class="primary-btn">
+        Book Fake Appointment ↗
+    </a>
 
-    <p id="appointmentResult"></p>
 </section>
 
 <footer>
-    <p>© 2026 Bakchodi Clinic | Dr. Sahil</p>
-    <p>Disclaimer: This website is for fun only 😂</p>
+    <div>© 2026 <span>Dr. Sahil</span></div>
+    <div>Made with questionable intentions 🌚</div>
 </footer>
 
 <script>
-function diagnosis() {
+const diagnoses = [
+    "Diagnosis: Certified LODU 🤡",
+    "Diagnosis: Severe crush infection 🌚",
+    "Diagnosis: Brain.exe has stopped working",
+    "Diagnosis: 99% pagal, 1% patient",
+    "Diagnosis: WhatsApp last-seen addiction",
+    "Diagnosis: Single but emotionally married",
+    "Diagnosis: Overthinking level - NASA 🚀",
+    "Diagnosis: Your ex is living rent-free",
+    "Diagnosis: Too much bakchodi detected 😂",
+    "Diagnosis: You need chai, not therapy."
+];
 
-    const diagnoses = [
-        "Diagnosis: You are suffering from unlimited bakchodi 😂",
-        "Diagnosis: Severe crush infection 🌚",
-        "Diagnosis: Your brain needs a vacation 🧠",
-        "Diagnosis: 99% pagal, 1% patient 🤡",
-        "Diagnosis: WhatsApp last seen addiction 📱",
-        "Diagnosis: Single but still dangerous 😎",
-        "Diagnosis: Overthinking level - NASA 🚀"
-    ];
+function diagnose() {
+    const result = document.getElementById("result");
 
-    const random =
-        diagnoses[Math.floor(Math.random() * diagnoses.length)];
+    result.style.opacity = "0";
 
-    document.getElementById("result").innerText = random;
-}
+    setTimeout(() => {
+        const random =
+            diagnoses[Math.floor(Math.random() * diagnoses.length)];
 
-function appointment() {
-    document.getElementById("appointmentResult").innerText =
-        "Appointment confirmed! Dr. Sahil will ignore you shortly 😂";
+        result.textContent = random;
+        result.style.opacity = "1";
+    }, 200);
 }
 </script>
 
